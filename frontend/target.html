@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OnCourse - Target Career</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <button class="exit-btn">Exit</button>
+    <div class="progress">Target Career</div>
+  </header>
+
+  <main class="page-shell">
+    <section class="form-card">
+      <h1>What target career are you considering?</h1>
+      <form id="target-form">
+        <label>
+          Target Career
+          <input id="target-career" type="text" placeholder="Data Scientist" />
+        </label>
+
+        <div class="nav-actions">
+          <button type="button" class="secondary-btn" onclick="window.location.href='/interests.html'">Back</button>
+          <button type="submit" class="primary-btn">Analyze</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <script src="/js/state.js"></script>
+  <script src="/js/navigation.js"></script>
+  <script src="/js/target.js"></script>
+</body>
+</html>

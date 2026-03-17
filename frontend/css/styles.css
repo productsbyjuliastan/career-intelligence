@@ -1,0 +1,878 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0b1020;
+  color: #e5e7eb;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+body {
+  min-height: 100vh;
+}
+
+.home-page,
+.loading-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-shell,
+.loading-shell {
+  width: 100%;
+  max-width: 900px;
+  padding: 32px;
+}
+
+.hero-box,
+.form-card,
+.result-card,
+.linkedin-preview,
+.job-card,
+.hero-main,
+.hero-highlight-card,
+.card {
+  background: #111827;
+  border: 1px solid #243041;
+  border-radius: 18px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+}
+
+.hero-box {
+  padding: 56px 40px;
+  text-align: center;
+}
+
+.hero-box h1 {
+  margin-top: 0;
+  font-size: 3rem;
+}
+
+.hero-box p {
+  max-width: 680px;
+  margin: 0 auto 24px;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+  border-bottom: 1px solid #1f2937;
+  position: sticky;
+  top: 0;
+  background: rgba(11, 16, 32, 0.96);
+  backdrop-filter: blur(6px);
+  z-index: 10;
+}
+
+.progress {
+  color: #93c5fd;
+  font-weight: bold;
+}
+
+.exit-btn,
+.secondary-btn,
+.primary-btn {
+  border: none;
+  border-radius: 12px;
+  padding: 12px 16px;
+  cursor: pointer;
+}
+
+.exit-btn,
+.secondary-btn {
+  background: #1f2937;
+  color: #e5e7eb;
+}
+
+.primary-btn {
+  background: #2563eb;
+  color: white;
+}
+
+.primary-btn:hover {
+  background: #1d4ed8;
+}
+
+.secondary-btn:hover,
+.exit-btn:hover {
+  background: #374151;
+}
+
+.page-shell,
+.results-shell {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 20px 60px;
+}
+
+.form-card {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 28px;
+}
+
+.form-card h1 {
+  margin-top: 0;
+}
+
+label {
+  display: block;
+  margin-bottom: 18px;
+  font-weight: bold;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  margin-top: 8px;
+  padding: 13px 14px;
+  background: #0f172a;
+  color: white;
+  border: 1px solid #334155;
+  border-radius: 12px;
+}
+
+.nav-actions {
+  margin-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.multi-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.multi-row {
+  display: flex;
+  gap: 10px;
+}
+
+.loading-shell {
+  text-align: center;
+}
+
+.spinner {
+  width: 72px;
+  height: 72px;
+  border: 8px solid #1f2937;
+  border-top-color: #2563eb;
+  border-radius: 50%;
+  margin: 0 auto 18px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ------------------------------
+   Hero result section
+------------------------------ */
+
+.hero-result {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 24px;
+  align-items: stretch;
+  margin-bottom: 24px;
+}
+
+.hero-main {
+  padding: 28px;
+}
+
+.hero-main h1 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 2.2rem;
+}
+
+.hero-main p {
+  margin: 0;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+.hero-highlight-panel {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 18px;
+}
+
+.hero-highlight-card {
+  background: linear-gradient(180deg, #111827, #0f172a);
+  border: 1px solid #2c3a52;
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-highlight-label {
+  color: #93c5fd;
+  font-size: 0.95rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 10px;
+}
+
+.hero-highlight-value {
+  font-size: 2rem;
+  font-weight: 800;
+  color: white;
+  line-height: 1.1;
+}
+
+.hero-highlight-value.wage {
+  color: #86efac;
+}
+
+/* ------------------------------
+   Result sections
+------------------------------ */
+
+.results-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.result-card {
+  padding: 20px;
+}
+
+.result-card h2 {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.result-card h3 {
+  margin-top: 18px;
+  margin-bottom: 10px;
+  color: #cbd5e1;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.metric-card {
+  background: #0f172a;
+  border: 1px solid #233147;
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.metric-card span {
+  display: block;
+  color: #94a3b8;
+  margin-bottom: 8px;
+}
+
+.metric-card strong {
+  font-size: 1.35rem;
+}
+
+.hidden {
+  display: none;
+}
+
+/* ------------------------------
+   Horizontal bars
+------------------------------ */
+
+.bar-chart-wrap {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.bar-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bar-label-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #cbd5e1;
+}
+
+.bar-track {
+  width: 100%;
+  height: 14px;
+  background: #1f2937;
+  border-radius: 999px;
+  overflow: hidden;
+  border: 1px solid #2d3b50;
+}
+
+.bar-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #2563eb, #60a5fa);
+  border-radius: 999px;
+  transition: width 0.7s ease;
+}
+
+/* ------------------------------
+   Chips / tags
+------------------------------ */
+
+.chip-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chip {
+  display: inline-block;
+  padding: 10px 12px;
+  border-radius: 999px;
+  background: #172554;
+  color: #dbeafe;
+  border: 1px solid transparent;
+}
+
+.chip.warning {
+  background: #3f1d1d;
+  color: #fecaca;
+}
+
+.chip.success {
+  background: #153b2e;
+  color: #86efac;
+}
+
+.chip.danger {
+  background: #3f1d1d;
+  color: #fca5a5;
+}
+
+.match-section h3 {
+  margin-top: 18px;
+}
+
+/* ------------------------------
+   Footer buttons
+------------------------------ */
+
+.footer-actions {
+  display: flex;
+  justify-content: center; /* center instead of right */
+  gap: 16px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.footer-actions button {
+  width: auto;          /* important: stops full width */
+  min-width: 0;         /* removes forced stretching */
+  padding: 12px 18px;   /* nice compact size */
+}
+
+.primary-btn,
+.secondary-btn {
+  border-radius: 14px;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+/* ------------------------------
+   Career list / LinkedIn style
+------------------------------ */
+
+.linkedin-shell {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 24px 20px 50px;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 20px;
+}
+
+.linkedin-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.job-card {
+  padding: 18px;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.job-card:hover {
+  transform: translateY(-2px);
+}
+
+.job-card.selected {
+  outline: 2px solid #2563eb;
+  border-left: 4px solid #2563eb;
+}
+
+.job-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.job-top h3 {
+  margin: 0;
+}
+
+.job-match {
+  color: #93c5fd;
+  font-weight: bold;
+}
+
+.job-desc {
+  color: #cbd5e1;
+  line-height: 1.5;
+}
+
+.job-meta {
+  color: #94a3b8;
+  font-size: 0.95rem;
+}
+
+.linkedin-preview {
+  padding: 24px;
+  position: sticky;
+  top: 88px;
+  height: fit-content;
+}
+
+/* ------------------------------
+   Future Steps section
+------------------------------ */
+
+.future-steps-card {
+  margin-top: 24px;
+  background: linear-gradient(180deg, #0f172a, #111827);
+  border: 1px solid #243041;
+  border-radius: 22px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+  padding: 28px;
+}
+
+.future-steps-header {
+  margin-bottom: 22px;
+}
+
+.future-steps-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 2rem;
+  color: #f8fafc;
+}
+
+.future-steps-header p {
+  margin: 0;
+  color: #94a3b8;
+  line-height: 1.5;
+}
+
+.future-steps-content {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.future-steps-summary {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid #243041;
+  border-radius: 18px;
+  padding: 20px;
+}
+
+.future-steps-summary h3 {
+  margin: 0 0 10px 0;
+  color: #f8fafc;
+  font-size: 1.1rem;
+}
+
+.future-steps-summary p {
+  margin: 0;
+  color: #dbe2ea;
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+.future-steps-note {
+  margin-top: 14px;
+  padding: 14px 16px;
+  border-left: 4px solid #60a5fa;
+  background: rgba(37, 99, 235, 0.08);
+  border-radius: 12px;
+  color: #dbeafe;
+  line-height: 1.6;
+}
+
+.future-steps-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.future-step-column {
+  border-radius: 18px;
+  padding: 22px;
+  border: 1px solid #243041;
+  min-height: 100%;
+}
+
+.future-step-column h3 {
+  margin: 0 0 14px 0;
+  font-size: 1.35rem;
+  line-height: 1.2;
+}
+
+.future-step-column.urgent {
+  background: rgba(16, 185, 129, 0.08);
+}
+
+.future-step-column.urgent h3 {
+  color: #34d399;
+}
+
+.future-step-column.important {
+  background: rgba(59, 130, 246, 0.08);
+}
+
+.future-step-column.important h3 {
+  color: #38bdf8;
+}
+
+.future-step-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.future-step-list li {
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 12px;
+  color: #f1f5f9;
+  line-height: 1.7;
+}
+
+.future-step-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #94a3b8;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* ------------------------------
+   Misc
+------------------------------ */
+
+.career-item {
+  padding: 14px 0;
+  border-bottom: 1px solid #243041;
+}
+
+.career-item:last-child {
+  border-bottom: none;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+p {
+  line-height: 1.5;
+}
+
+#results {
+  margin-top: 24px;
+}
+
+#results h2,
+#results h3 {
+  margin-top: 0;
+}
+
+.print-only-report-title {
+  display: none;
+}
+
+/* ------------------------------
+   Responsive
+------------------------------ */
+
+@media (max-width: 900px) {
+  .results-grid,
+  .linkedin-shell,
+  .metrics-grid,
+  .hero-result {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-result {
+    display: grid;
+  }
+
+  .hero-highlight-panel {
+    grid-template-rows: none;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-actions,
+  .nav-actions {
+    justify-content: stretch;
+  }
+
+  .future-steps-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .future-steps-card {
+    padding: 20px;
+  }
+
+  .future-steps-header h2 {
+    font-size: 1.6rem;
+  }
+}
+
+/* ------------------------------
+   Print / PDF styling
+------------------------------ */
+
+@media print {
+  @page {
+    size: auto;
+    margin: 0.5in;
+  }
+
+  html,
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 12pt;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  body * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  .topbar,
+  .footer-actions,
+  .exit-btn,
+  .primary-btn,
+  .secondary-btn {
+    display: none !important;
+  }
+
+  .results-shell,
+  .page-shell,
+  .container {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .print-only-report-title {
+    display: block !important;
+    margin-bottom: 18px;
+  }
+
+  .hero-result {
+    display: block !important;
+    margin-bottom: 10px !important;
+    padding: 16px 18px !important;
+  }
+
+  .results-grid,
+  .metrics-grid,
+  .linkedin-shell {
+    display: block !important;
+    grid-template-columns: none !important;
+    gap: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  .hero-main,
+  .hero-highlight-card,
+  .result-card,
+  .metric-card,
+  .linkedin-preview,
+  .job-card,
+  .form-card,
+  .card {
+    background: white !important;
+    color: black !important;
+    border: 1px solid #bdbdbd !important;
+    border-radius: 10px !important;
+    box-shadow: none !important;
+    filter: none !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+    margin-top: 0 !important;
+    margin-bottom: 10px !important;
+  }
+
+  .hero-main {
+    padding: 16px 18px !important;
+  }
+
+  .hero-highlight-panel {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
+  }
+
+  .hero-highlight-card {
+    padding: 14px 16px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .hero-highlight-value {
+    font-size: 1.6rem !important;
+    line-height: 1.2 !important;
+    word-break: break-word;
+    color: black !important;
+  }
+
+  .hero-highlight-label,
+  .sub-badge,
+  .job-meta,
+  .job-desc,
+  .hero-main p,
+  .metric-card span,
+  .bar-label-line,
+  p,
+  li {
+    color: #333 !important;
+  }
+
+  .hero-main h1,
+  .result-card h2,
+  .result-card h3,
+  .metric-card strong {
+    color: black !important;
+  }
+
+  .badge,
+  .sub-badge,
+  .chip,
+  .chip.success,
+  .chip.warning,
+  .chip.danger {
+    background: #f3f3f3 !important;
+    color: black !important;
+    border: 1px solid #999 !important;
+  }
+
+  .bar-track {
+    background: #eeeeee !important;
+    border: 1px solid #bbbbbb !important;
+    height: 12px !important;
+  }
+
+  .bar-fill {
+    background: #666666 !important;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .chip-wrap {
+    gap: 8px !important;
+  }
+
+  .future-steps-card,
+.future-steps-summary,
+.future-step-column {
+  background: white !important;
+  color: black !important;
+  border: 1px solid #bdbdbd !important;
+  box-shadow: none !important;
+}
+
+.future-steps-header h2,
+.future-steps-summary h3,
+.future-step-column h3 {
+  color: black !important;
+}
+
+.future-steps-header p,
+.future-steps-summary p,
+.future-step-list li,
+.future-steps-note {
+  color: #333 !important;
+}
+
+.future-steps-note {
+  background: #f3f3f3 !important;
+  border-left: 4px solid #888 !important;
+}
+
+.future-steps-grid {
+  grid-template-columns: 1fr 1fr !important;
+  gap: 12px !important;
+}
+
+  .result-card h2 {
+    margin-top: 0 !important;
+    margin-bottom: 10px !important;
+  }
+
+  .result-card h3 {
+    margin-top: 10px !important;
+    margin-bottom: 8px !important;
+  }
+
+  p,
+  li {
+    margin-top: 4px !important;
+    margin-bottom: 4px !important;
+  }
+
+  a {
+    color: black !important;
+    text-decoration: none !important;
+  }
+}

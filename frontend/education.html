@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OnCourse - Education</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <button class="exit-btn">Exit</button>
+    <div class="progress">Education</div>
+  </header>
+
+  <main class="page-shell">
+    <section class="form-card">
+      <h1>Tell us about your education</h1>
+      <form id="education-form">
+        <label>
+          Education Level
+          <select id="education-level" required>
+            <option value="">Select one</option>
+            <option value="high_school">High school diploma</option>
+            <option value="some_college">Some college</option>
+            <option value="associates">Associate's</option>
+            <option value="bachelors">Bachelor's</option>
+            <option value="masters">Master's</option>
+            <option value="phd">PhD</option>
+            <option value="certificate">Certificate</option>
+          </select>
+        </label>
+
+        <div id="dynamic-area"></div>
+
+        <div class="nav-actions">
+          <button type="submit" class="primary-btn">Next</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <script src="/js/state.js"></script>
+  <script src="/js/navigation.js"></script>
+  <script src="/js/education.js"></script>
+</body>
+</html>

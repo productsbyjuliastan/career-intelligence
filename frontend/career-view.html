@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Career View</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <button class="exit-btn">Exit</button>
+    <div class="progress">Career View</div>
+  </header>
+
+  <main class="results-shell">
+    <section class="hero-result">
+        <div class="hero-main">
+            <h1 id="career-title"></h1>
+            <p id="career-description"></p>
+        </div>
+
+        <div class="print-only-report-title">
+            <h1>Career Analysis Report</h1>
+        </div>
+        
+        <div class="hero-highlight-panel">
+            <div class="hero-highlight-card">
+            <span class="hero-highlight-label">Career Match</span>
+            <div class="hero-highlight-value" id="career-match"></div>
+        </div>
+
+        <div class="hero-highlight-card">
+            <span class="hero-highlight-label">Median Wage</span>
+            <div class="hero-highlight-value wage" id="career-wage"></div>
+        </div>
+
+        </div>
+    </section>
+
+<section class="results-grid">
+<div class="result-card">
+    <h2>Evaluation Breakdown</h2>
+    <div id="breakdown" class="metrics-grid"></div>
+
+    <div class="bar-chart-wrap">
+        <div class="bar-row">
+            <div class="bar-label-line">
+            <span>Education Fit</span>
+            <strong id="bar-education-value">0%</strong>
+            </div>
+            <div class="bar-track">
+            <div id="bar-education" class="bar-fill"></div>
+            </div>
+        </div>
+
+        <div class="bar-row">
+            <div class="bar-label-line">
+                <span>Skills Fit</span>
+                <strong id="bar-skills-value">0%</strong>
+            </div>
+            <div class="bar-track">
+                <div id="bar-skills" class="bar-fill"></div>
+            </div>
+        </div>
+
+        <div class="bar-row">
+            <div class="bar-label-line">
+                <span>Interests Fit</span>
+                <strong id="bar-interests-value">0%</strong>
+            </div>
+            <div class="bar-track">
+                <div id="bar-interests" class="bar-fill"></div>
+            </div>
+        </div>
+
+        <div class="bar-row">
+            <div class="bar-label-line">
+                <span>Target Alignment</span>
+                <strong id="bar-target-value">0%</strong>
+            </div>
+            <div class="bar-track">
+                <div id="bar-target" class="bar-fill"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="result-card">
+        <h2>Top Skills in This Career</h2>
+        <div id="top-skills" class="chip-wrap"></div>
+    </div>
+
+    <div class="result-card">
+        <h2>Missing Skills / Qualities</h2>
+        <div id="missing-skills" class="chip-wrap"></div>
+    </div>
+
+    <div class="result-card">
+        <h2>Why This Career Matches</h2>
+        <div class="match-section">
+            <h3>Matched Skills</h3>
+            <div id="matched-skills" class="chip-wrap"></div>
+            <h3>Major Alignment</h3>
+            <div id="major-alignment" class="chip-wrap"></div>
+        </div>
+    </div>
+</section>
+
+    <section class="future-steps-card">
+        <div class="future-steps-header">
+            <h2>Future Steps</h2>
+            <p>Your personalized next-step roadmap generated from your profile and career fit.</p>
+        </div>
+        <div id="ai-summary" class="future-steps-content"></div>
+    </section>
+
+    <section class="footer-actions">
+        <button id="download-report" class="secondary-btn">Download Report</button>
+        <button id="browse-careers" class="primary-btn">Browse Unexpected Careers</button>
+    </section>
+  </main>
+
+  <script src="/js/state.js"></script>
+  <script src="/js/navigation.js"></script>
+  <script src="/js/career-view.js"></script>
+</body>
+</html>
